@@ -3,6 +3,6 @@ public class Explorador {
     private Posicion posicionActual;
 
     public Explorador(String nombre){
-    
+
     }
 }
