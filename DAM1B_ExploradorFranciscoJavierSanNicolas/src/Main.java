@@ -23,6 +23,10 @@ public class Main {
         Mapa mapajuego = new Mapa();
         do {
             mapajuego.Mostrar();
+            System.out.println(mapajuego.getPosTesoro().getCoordenadaFila());
+            System.out.println(mapajuego.getPosTesoro().getCoordenadaCol());
+            System.out.println(jugador.getPosicionActual().getCoordenadaFila());
+            System.out.println(jugador.getPosicionActual().getCoordenadaCol());
 
             System.out.println("\n W=Arriba    A=Izquierda    S=Abajo   D=Derecha\n");
             System.out.println("¿Qué acción quieres realizar? ");
@@ -43,7 +47,9 @@ public class Main {
                 opcionDireccion = DERECHA;
             }
             jugador.Moverse(opcionDireccion);
-        }while (jugador.getPosicionActual() != mapajuego.getPosTesoro());
+
+        }while(jugador.getPosicionActual().getCoordenadaCol() != mapajuego.getPosTesoro().getCoordenadaCol() || jugador.getPosicionActual().getCoordenadaFila() != mapajuego.getPosTesoro().getCoordenadaFila());
+
         System.out.println("Has ganado");
 
 
