@@ -57,11 +57,28 @@ public class Main {
             jugador.moverse(opcionDireccion);
             mapajuego.moverTodosEnemigos();
 
-        }while (jugador.getPosicionActual().getCoordenadaCol() != mapajuego.getPosTesoro().getCoordenadaCol()
-                || jugador.getPosicionActual().getCoordenadaFila() != mapajuego.getPosTesoro().getCoordenadaFila()
-
-                                                                                                                    );
-        //El bucle se hace una vez y luego se repite hasta que ninguna de las cordenadas del explorador sean distintas a la del tesoro.
+        }while (!((jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosTesoro().getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosTesoro().getCoordenadaFila() )
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosicionTrampas()[0].getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosicionTrampas()[0].getCoordenadaFila())
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosicionTrampas()[1].getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosicionTrampas()[1].getCoordenadaFila())
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosicionTrampas()[2].getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosicionTrampas()[2].getCoordenadaFila())
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getListadoEnemigos()[0].getPosicionActual().getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[0].getPosicionActual().getCoordenadaFila())
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getListadoEnemigos()[1].getPosicionActual().getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[1].getPosicionActual().getCoordenadaFila())
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaFila()) )
+                );
+        //El bucle se hace una vez y luego se repite hasta que ninguna de las cordenadas del explorador sean distintas a la del tesoro, enemigos y trampas. COLISIONES
 
 
         System.out.println("\nHas ganado");
