@@ -25,7 +25,7 @@ public class Explorador {
         this.posicionActual = posicionActual;
     }
 
-    public void Moverse(int direccion){
+    public void moverse(int direccion){
         if (direccion == ARRIBA){
             if (posicionActual.getCoordenadaFila() > 0){
                 this.posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila() - 1);
