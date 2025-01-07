@@ -1,9 +1,14 @@
 public class Explorador {
     private String nombre;
     private Posicion posicionActual;
+    private final int ARRIBA = 1; //direccion
+    private final int ABAJO = 2; //direccion
+    private final int DERECHA = 3; //direccion
+    private final int IZQUIERDA = 4; //direccion
 
     public Explorador(String nombre){
-
+        this.nombre = nombre;
+        this.posicionActual = new Posicion((int)(Math.random()*6), 0);
     }
 
     public String getNombre(){
@@ -15,10 +20,26 @@ public class Explorador {
     }
 
     public void setPosicionActual(Posicion posicionActual){
-
+        this.posicionActual = posicionActual;
     }
 
     public void Moverse(int direccion){
-        
+        if (direccion == ARRIBA){
+            if (posicionActual.getCoordenadaFila() != 0){
+                this.posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila() - 1);
+            }
+        }else if (direccion == ABAJO){
+            if (posicionActual.getCoordenadaFila() != 5){
+                this.posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila() + 1);
+            }
+        }else if (direccion == DERECHA){
+            if (posicionActual.getCoordenadaCol() != 0){
+                this.posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol() - 1);
+            }
+        }else {
+            if (posicionActual.getCoordenadaCol() != 19){
+                this.posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol() + 1);
+            }
+        }
     }
 }
