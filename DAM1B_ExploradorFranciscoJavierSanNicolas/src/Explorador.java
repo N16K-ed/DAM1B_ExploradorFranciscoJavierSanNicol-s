@@ -1,10 +1,12 @@
 public class Explorador {
-    private String nombre;
-    private Posicion posicionActual;
     private final int ARRIBA = 1; //direccion
     private final int ABAJO = 2; //direccion
     private final int DERECHA = 3; //direccion
     private final int IZQUIERDA = 4; //direccion
+
+    private String nombre;
+    private Posicion posicionActual;
+
 
     public Explorador(String nombre){
         this.nombre = nombre;
