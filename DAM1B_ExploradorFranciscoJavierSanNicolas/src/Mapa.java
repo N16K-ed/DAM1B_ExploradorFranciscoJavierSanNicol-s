@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Mapa {
     private char[][] tablero;;
     private Posicion posTesoro;
@@ -7,15 +6,7 @@ public class Mapa {
     private Posicion[] posicionTrampas;
 
     public Mapa(){
-        //Scanner teclado
-        Scanner teclado = new Scanner(System.in);
-
-        // Crea al explorador
-        System.out.println("Introduzca su nombre:");
-        String nombre = teclado.nextLine();
-        Explorador jugador = new Explorador(nombre);
-        this.posJugador = jugador.getPosicionActual();
-
+        this.posJugador = Main.getJugador().getPosicionActual();
         //inicializa tablero
         this.tablero = new char[6][20];
         for (int filas = 0; filas < tablero.length; filas++){

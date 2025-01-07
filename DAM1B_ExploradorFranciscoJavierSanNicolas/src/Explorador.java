@@ -27,20 +27,20 @@ public class Explorador {
 
     public void Moverse(int direccion){
         if (direccion == ARRIBA){
-            if (posicionActual.getCoordenadaFila() != 0){
+            if (posicionActual.getCoordenadaFila() > 0){
                 this.posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila() - 1);
             }
         }else if (direccion == ABAJO){
-            if (posicionActual.getCoordenadaFila() != 5){
+            if (posicionActual.getCoordenadaFila() < 5){
                 this.posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila() + 1);
             }
         }else if (direccion == DERECHA){
-            if (posicionActual.getCoordenadaCol() != 0){
-                this.posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol() - 1);
-            }
-        }else {
-            if (posicionActual.getCoordenadaCol() != 19){
+            if (posicionActual.getCoordenadaCol() < 19){
                 this.posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol() + 1);
+            }
+        }else{
+            if (posicionActual.getCoordenadaCol() > 0){
+                this.posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol() - 1);
             }
         }
     }
