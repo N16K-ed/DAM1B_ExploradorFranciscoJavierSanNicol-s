@@ -74,7 +74,7 @@ public class Mapa {
     }
     public void moverTodosEnemigos(){
         for (int i = 0; i < listadoEnemigos.length; i++){
-            int numAleatorio = (int)(Math.random()*4+1);
+            int numAleatorio = (int)(Math.random()*4+1); //Direccion aleatoria
             if (numAleatorio == ARRIBA){
                 if (listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != listadoEnemigos[0].getPosicionActual().getCoordenadaFila() || //if evita a los enemigos
                         listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != listadoEnemigos[1].getPosicionActual().getCoordenadaFila() ||
@@ -117,5 +117,12 @@ public class Mapa {
                 }
             }
         }
+    }
+    public Posicion[] getPosicionTrampas(){
+        return posicionTrampas;
+    }
+
+    public Enemigo[] getListadoEnemigos() {
+        return listadoEnemigos;
     }
 }
