@@ -9,6 +9,7 @@ public class Mapa {
     private Posicion posJugador;
     private Enemigo[] listadoEnemigos;
     private Posicion[] posicionTrampas;
+    private EnemigoInteligente jefe;
 
     public Mapa(){
         this.posJugador = Main.getJugador().getPosicionActual();
@@ -30,13 +31,17 @@ public class Mapa {
         this.posicionTrampas = new Posicion[3];
         for (int i = 0; i < posicionTrampas.length; i++ ){
             do {
-                posicionTrampas[i] = new Posicion((int) (Math.random() * 6), (int) (Math.random() * 19 + 1));
+                posicionTrampas[i] = new Posicion((int) (Math.random() * 6), (int) (Math.random() * 20));
             }while(posicionTrampas[i] == posJugador || posicionTrampas[i] == this.listadoEnemigos[0].getPosicionActual() || posicionTrampas[i] == this.listadoEnemigos[1].getPosicionActual() || posicionTrampas[i] == this.listadoEnemigos[2].getPosicionActual());
         } // la condicion del do while evita que se posicionen trampas donde los enemigos y jugador
         //inicializa tesoro
         do {
             this.posTesoro = new Posicion((int) (Math.random() * 6), (int) (Math.random() * 20));
         }while (this.posTesoro == posJugador || this.posTesoro == posicionTrampas[0] || this.posTesoro == posicionTrampas[1] || this.posTesoro == posicionTrampas[2] || posTesoro == this.listadoEnemigos[0].getPosicionActual() || this.posTesoro == this.listadoEnemigos[1].getPosicionActual() || this.posTesoro == this.listadoEnemigos[2].getPosicionActual());
+        //inicializa enemigo inteligente
+        do {
+            this.jefe = new EnemigoInteligente(new Posicion((int) (Math.random() * 6), (int) (Math.random() * 20)));
+        }while (this.jefe.getPosicionActual() == posJugador || this.jefe.getPosicionActual()== posicionTrampas[0] || this.jefe.getPosicionActual() == posicionTrampas[1] || this.jefe.getPosicionActual() == posicionTrampas[2] || this.jefe.getPosicionActual() == this.listadoEnemigos[0].getPosicionActual() || this.jefe.getPosicionActual() == this.listadoEnemigos[1].getPosicionActual() || this.jefe.getPosicionActual() == this.listadoEnemigos[2].getPosicionActual() || this.jefe.getPosicionActual() == this.posTesoro);
     }
 
     public char[][] getTablero(){
@@ -64,6 +69,8 @@ public class Mapa {
                           (filas == posicionTrampas[1].getCoordenadaFila() && columnas == posicionTrampas[1].getCoordenadaCol()) ||
                           (filas == posicionTrampas[2].getCoordenadaFila() && columnas == posicionTrampas[2].getCoordenadaCol())){
                     System.out.print("\u001B[31m" + "T" + "\u001B[0m" +" | " );
+                }else if ((filas == jefe.getPosicionActual().getCoordenadaFila() && columnas == jefe.getPosicionActual().getCoordenadaCol())){
+                    System.out.print("\u001B[31m" + "*" + "\u001B[0m" + " | ");
                 }else{
                     System.out.print(tablero[filas][columnas] + " | ");
                 }

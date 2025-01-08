@@ -24,14 +24,14 @@ public class Main {
         //muestra el mapa tras cada turno hasta llegar al tesoro o mueras debido a trampas o enemigos
         do {
             mapajuego.Mostrar();
-
+            /*
             //Wallhack para ganar facil, eliminar al entregar
             System.out.println(mapajuego.getPosTesoro().getCoordenadaFila());
             System.out.println(mapajuego.getPosTesoro().getCoordenadaCol());
             System.out.println(jugador.getPosicionActual().getCoordenadaFila());
             System.out.println(jugador.getPosicionActual().getCoordenadaCol());
             //Fin del wallhack
-
+            */
 
             System.out.println("\nW=Arriba    A=Izquierda    S=Abajo   D=Derecha\n");
             System.out.println("¿Qué acción quieres realizar? ");
