@@ -79,6 +79,7 @@ public class Mapa {
         }
         System.out.println("---------------------------------------------------------------------------------");
     }
+
     public void moverTodosEnemigos(){
         for (int i = 0; i < listadoEnemigos.length; i++){
             int numAleatorio = (int)(Math.random()*4+1); //Direccion aleatoria
@@ -133,6 +134,7 @@ public class Mapa {
             }
         }
     }
+
     public Posicion[] getPosicionTrampas(){
         return posicionTrampas;
     }

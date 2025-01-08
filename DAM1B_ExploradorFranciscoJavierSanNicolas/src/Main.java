@@ -56,6 +56,7 @@ public class Main {
             //el explorador se mueve segun le indiquemos
             jugador.moverse(opcionDireccion);
             mapajuego.moverTodosEnemigos();
+            mapajuego.getJefe().moverse(mapajuego);
 
         }while (!((jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosTesoro().getCoordenadaCol()
                 && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosTesoro().getCoordenadaFila() )

@@ -20,12 +20,12 @@ public class Enemigo {
                     this.posicionActual.setCoordenadaFila(this.posicionActual.getCoordenadaFila() + 1);
                 }
             }else if (direccion == DERECHA){
-                if (this.posicionActual.getCoordenadaCol() != 0){
-                    this.posicionActual.setCoordenadaCol(this.posicionActual.getCoordenadaCol() - 1);
-                }
-            }else {
                 if (this.posicionActual.getCoordenadaCol() != 19){
                     this.posicionActual.setCoordenadaCol(this.posicionActual.getCoordenadaCol() + 1);
+                }
+            }else {
+                if (this.posicionActual.getCoordenadaCol() != 0){
+                    this.posicionActual.setCoordenadaCol(this.posicionActual.getCoordenadaCol() - 1);
                 }
             }
     }
