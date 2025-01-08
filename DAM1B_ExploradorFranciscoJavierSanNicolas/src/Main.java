@@ -76,13 +76,16 @@ public class Main {
                 && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[1].getPosicionActual().getCoordenadaFila())
                 ||
                 (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaCol()
-                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaFila()) )
+                && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaFila())
+                ||
+                (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getJefe().getPosicionActual().getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() ==  mapajuego.getJefe().getPosicionActual().getCoordenadaFila()) )
                 );
         //El bucle se hace una vez y luego se repite hasta que ninguna de las cordenadas del explorador sean distintas a la del tesoro, enemigos y trampas. COLISIONES
 
         if (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosTesoro().getCoordenadaCol()
             && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosTesoro().getCoordenadaFila()){
-            System.out.println("\nHas ganado \nHas encontrado el tesoro");
+            System.out.println("\nHas ganado. \nHas encontrado el tesoro.");
         }else if((jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosicionTrampas()[0].getCoordenadaCol()
                 && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosicionTrampas()[0].getCoordenadaFila())
                 ||
@@ -91,7 +94,7 @@ public class Main {
                 ||
                 (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getPosicionTrampas()[2].getCoordenadaCol()
                 && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getPosicionTrampas()[2].getCoordenadaFila())){
-            System.out.println("\nHas perdido \nHas caído en una trampa");
+            System.out.println("\nHas perdido. \nHas caído en una trampa.");
         }else if((jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getListadoEnemigos()[0].getPosicionActual().getCoordenadaCol()
                 && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[0].getPosicionActual().getCoordenadaFila())
                 ||
@@ -100,7 +103,10 @@ public class Main {
                 ||
                 (jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaCol()
                 && jugador.getPosicionActual().getCoordenadaFila() == mapajuego.getListadoEnemigos()[2].getPosicionActual().getCoordenadaFila()) ){
-            System.out.println("\nHas perdido \nHas sido asesinado por un enemigo");
+            System.out.println("\nHas perdido. \nHas sido asesinado por un enemigo.");
+        }else if((jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getJefe().getPosicionActual().getCoordenadaCol()
+                && jugador.getPosicionActual().getCoordenadaFila() ==  mapajuego.getJefe().getPosicionActual().getCoordenadaFila()) ){
+            System.out.println("\nHas perdido. \nHas sido asesinado por un enemigo. \nParecía muy fuerte...");
         }
 
     }

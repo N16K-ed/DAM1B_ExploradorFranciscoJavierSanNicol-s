@@ -38,4 +38,5 @@ public class EnemigoInteligente {
     public Posicion getPosicionActual(){
         return posicionActual;
     }
+
 }
