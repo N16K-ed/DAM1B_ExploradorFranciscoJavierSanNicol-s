@@ -106,7 +106,7 @@ public class Main {
             System.out.println("\nHas perdido. \nHas sido asesinado por un enemigo.");
         }else if((jugador.getPosicionActual().getCoordenadaCol() == mapajuego.getJefe().getPosicionActual().getCoordenadaCol()
                 && jugador.getPosicionActual().getCoordenadaFila() ==  mapajuego.getJefe().getPosicionActual().getCoordenadaFila()) ){
-            System.out.println("\nHas perdido. \nHas sido asesinado por un enemigo. \nParecía muy fuerte...");
+            System.out.println("\nHas perdido. \nHas sido asesinado por un enemigo. \nParecía más inteligente...");
         }
 
     }
