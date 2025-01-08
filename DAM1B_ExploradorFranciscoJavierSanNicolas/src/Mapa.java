@@ -89,7 +89,9 @@ public class Mapa {
                     if (listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 !=  posicionTrampas[0].getCoordenadaFila()|| //if evita a las trampas
                             listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != posicionTrampas[1].getCoordenadaFila()  ||
                             listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != posicionTrampas[2].getCoordenadaFila()) {
-                        listadoEnemigos[i].moverse(ARRIBA);
+                        if (listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != jefe.getPosicionActual().getCoordenadaFila()){
+                                listadoEnemigos[i].moverse(ARRIBA);
+                        }
                     }
                 }
             }else if (numAleatorio == ABAJO){
@@ -99,7 +101,9 @@ public class Mapa {
                     if (listadoEnemigos[i].getPosicionActual().getCoordenadaFila() + 1 !=  posicionTrampas[0].getCoordenadaFila()|| //if evita a las trampas
                             listadoEnemigos[i].getPosicionActual().getCoordenadaFila() + 1 != posicionTrampas[1].getCoordenadaFila()  ||
                             listadoEnemigos[i].getPosicionActual().getCoordenadaFila() + 1 != posicionTrampas[2].getCoordenadaFila()) {
-                        listadoEnemigos[i].moverse(ABAJO);
+                        if (listadoEnemigos[i].getPosicionActual().getCoordenadaFila() + 1 != jefe.getPosicionActual().getCoordenadaFila()){
+                            listadoEnemigos[i].moverse(ABAJO);
+                        }
                     }
                 }
             }else if (numAleatorio == IZQUIERDA){
@@ -109,7 +113,9 @@ public class Mapa {
                     if (listadoEnemigos[i].getPosicionActual().getCoordenadaCol() - 1 !=  posicionTrampas[0].getCoordenadaCol()|| //if evita a las trampas
                             listadoEnemigos[i].getPosicionActual().getCoordenadaCol() - 1 != posicionTrampas[1].getCoordenadaCol()  ||
                             listadoEnemigos[i].getPosicionActual().getCoordenadaCol() - 1 != posicionTrampas[2].getCoordenadaCol()) {
-                        listadoEnemigos[i].moverse(IZQUIERDA);
+                        if (listadoEnemigos[i].getPosicionActual().getCoordenadaCol() - 1 != jefe.getPosicionActual().getCoordenadaCol()){
+                            listadoEnemigos[i].moverse(IZQUIERDA);
+                        }
                     }
                 }
             }else {
@@ -119,7 +125,9 @@ public class Mapa {
                     if (listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 !=  posicionTrampas[0].getCoordenadaCol()|| //if evita a las trampas
                             listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != posicionTrampas[1].getCoordenadaCol()  ||
                             listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != posicionTrampas[2].getCoordenadaCol()) {
-                        listadoEnemigos[i].moverse(DERECHA);
+                        if (listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != jefe.getPosicionActual().getCoordenadaCol()){
+                            listadoEnemigos[i].moverse(DERECHA);
+                        }
                     }
                 }
             }
