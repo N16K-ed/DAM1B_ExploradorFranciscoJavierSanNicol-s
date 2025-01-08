@@ -11,7 +11,7 @@ public class Enemigo {
     }
 
     public void moverse(int direccion){
-            if (direccion == ARRIBA){
+            if (direccion == ARRIBA){ //Para que no se salga del mapa
                 if (this.posicionActual.getCoordenadaFila() != 0){
                     this.posicionActual.setCoordenadaFila(this.posicionActual.getCoordenadaFila() - 1);
                 }

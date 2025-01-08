@@ -116,9 +116,9 @@ public class Mapa {
                 if (listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != listadoEnemigos[0].getPosicionActual().getCoordenadaCol() ||
                         listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != listadoEnemigos[1].getPosicionActual().getCoordenadaCol() ||
                         listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != listadoEnemigos[2].getPosicionActual().getCoordenadaCol()){
-                    if (listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 !=  posicionTrampas[0].getCoordenadaFila()|| //if evita a las trampas
-                            listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != posicionTrampas[1].getCoordenadaFila()  ||
-                            listadoEnemigos[i].getPosicionActual().getCoordenadaFila() - 1 != posicionTrampas[2].getCoordenadaFila()) {
+                    if (listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 !=  posicionTrampas[0].getCoordenadaCol()|| //if evita a las trampas
+                            listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != posicionTrampas[1].getCoordenadaCol()  ||
+                            listadoEnemigos[i].getPosicionActual().getCoordenadaCol() + 1 != posicionTrampas[2].getCoordenadaCol()) {
                         listadoEnemigos[i].moverse(DERECHA);
                     }
                 }
